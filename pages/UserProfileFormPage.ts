@@ -19,7 +19,7 @@ export class UserProfileFormPage extends BasePage {
   private readonly dateOfBirthSelector = '#dob';
   private readonly phoneNumberSelector = '#phone';
   private readonly addressSelector = '#address';
-  private readonly linkedinUrlSelector = '#linkedin';
+  private readonly linkedinUrlSelector = '#linkedIn';
   private readonly githubUrlSelector = '#github';
   private readonly submitButtonSelector = 'button[type="submit"]';
   private readonly errorMessageSelector = '.error-message';
