@@ -1,25 +1,25 @@
 # User Profile Form – Automated Tests
 
 Hey there! 👋  
-This repo contains a suite of automated tests I wrote using **Playwright** to validate the **user profile creation form**. It’s part of a QA assessment project.
+This repo contains a suite of automated tests I wrote using **Playwright** to validate the **user profile creation form**. It's part of a QA assessment project.
 
-You’ll find a detailed breakdown of the results and insights in the test report:  
+You'll find a detailed breakdown of the results and insights in the test report:  
 📄 [Quality Assurance Test Report - Kevin Noutsawo](Quality%20Assurance%20Test%20Report%20-%20Kevin%20Noutsawo.md)  
 📑 [PDF version](Quality%20Assurance%20Test%20Report%20-%20Kevin%20Noutsawo.pdf)
 
 ---
 
-## 🔍 What’s This About?
+## 🔍 What's This About?
 
-These tests are designed to make sure the user profile form works as expected — from basic field validations to catching subtle UI issues. I’ve focused not just on functionality, but also on things that impact the overall user experience.
+These tests are designed to make sure the user profile form works as expected — from basic field validations to catching subtle UI issues. I've focused not just on functionality, but also on things that impact the overall user experience.
 
 You can check out the live form here: [https://qa-ssessment.pages.dev](https://qa-ssessment.pages.dev)
 
 ---
 
-## ✅ What’s Covered
+## ✅ What's Covered
 
-Here’s what the test suite currently looks for:
+Here's what the test suite currently looks for:
 
 ### 1. **Mandatory Fields**
 - Verifies that required fields are present and properly validated
@@ -49,6 +49,7 @@ Here’s what the test suite currently looks for:
 
 The project follows the **Page Object Model (POM)** design pattern:
 
+```
 pages/
 ├─ BasePage.ts // Shared logic for pages
 └─ UserProfileFormPage.ts // Page object for the form
@@ -61,12 +62,13 @@ tests/
 ├─ field-validation.spec.ts
 ├─ optional-fields.spec.ts
 └─ ui-defects.spec.ts
+```
 
 ---
 
 ## 🛠 Prerequisites
 
-Make sure you’ve got the following installed:
+Make sure you've got the following installed:
 
 - **Node.js** (v18+)
 - **npm** (v7+)
@@ -81,66 +83,71 @@ Make sure you’ve got the following installed:
    git clone <repository-url>
    cd <repository-directory>
    ```
-   
-Install the dependencies:
 
-bash
-``npm install``
+2. Install the dependencies:
 
-Set up Playwright browsers:
+   ```bash
+   npm install
+   ```
 
-bash
-``npx playwright install``
+3. Set up Playwright browsers:
 
-🧪 Running the Tests
+   ```bash
+   npx playwright install
+   ```
+
+## 🧪 Running the Tests
 
 Run all tests:
 
-bash
-``npm test``
+```bash
+npm test
+```
 
 Run in headed mode (browser UI visible):
 
-bash
-``npm run test:headed``
+```bash
+npm run test:headed
+```
 
 Run in debug mode:
 
-bash
-``npm run test:debug``
+```bash
+npm run test:debug
+```
 
 Run in specific browsers:
 
-bash
+```bash
 # Chrome
-``npm run test:chrome``
+npm run test:chrome
 
 # Firefox
-``npm run test:firefox``
+npm run test:firefox
 
 # Safari (WebKit)
-``npm run test:webkit``
+npm run test:webkit
+```
+
 View test report:
 
-bash
-``npm run test:report``
+```bash
+npm run test:report
+```
 
-⚠️ Known Issues & Bugs
+## ⚠️ Known Issues & Bugs
+
 Here are some things I discovered during testing:
 
-LinkedIn field is incorrectly required — It’s supposed to be optional.
+- LinkedIn field is incorrectly required — It's supposed to be optional.
+- Wrong error message for last name — It shows a first name error instead.
+- Password validation bug — Displays "Passwords do not match" when the password is actually missing.
+- Date of birth format — Users can't easily input dates in YYYY-MM-DD format, and future dates are wrongly accepted.
+- No success message — Nothing appears after successful form submission.
+- UI problems — Includes typos, missing gender options, and missing placeholders.
 
-Wrong error message for last name — It shows a first name error instead.
+## 🛠 Workarounds
 
-Password validation bug — Displays “Passwords do not match” when the password is actually missing.
-
-Date of birth format — Users can’t easily input dates in YYYY-MM-DD format, and future dates are wrongly accepted.
-
-No success message — Nothing appears after successful form submission.
-
-UI problems — Includes typos, missing gender options, and missing placeholders.
-
-🛠 Workarounds
 For known bugs, test expectations are adjusted to reflect current (even if incorrect) behavior.
 
 LinkedIn field is always filled in tests, since the app currently requires it. This can be updated as soon as the issue is fixed.
