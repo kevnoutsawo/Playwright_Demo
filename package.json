@@ -1,9 +1,17 @@
 {
   "name": "playwright_demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automated testing for the user profile creation form",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
